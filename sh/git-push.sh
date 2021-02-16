@@ -9,7 +9,7 @@ t="${t//:}"
 d=$d-$t
 echo $d
 cd ~/dev/config
-#git status
+# git status
 set +e  # Grep succeeds with nonzero exit codes to show results.
 git status | grep 'modified\|Untracked'
 if [ $? -eq 0 ]
