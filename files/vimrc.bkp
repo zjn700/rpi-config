@@ -15,10 +15,10 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdcommenter'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'junegunn/seoul256.vim'
+"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 call plug#end()
 
 " Config
@@ -44,7 +44,6 @@ filetype plugin indent on
 " search term
 set ignorecase
 set smartcase
-set scrolloff=3
 " show existing tab with 4 spaces width:
 set tabstop=2
 " when indenting with '>', use 4 spaces width:
@@ -60,45 +59,20 @@ set showtabline=2
 " show all items after tabbing on cmd line:
 set wildmenu
 " set wildmode=list:longest,full
-let g:seoul256_background = 234
-colo seoul256
-
-
-let g:mkdp_auto_start = 1
-" let g:mkdp_port = '9909'
-let g:python_host_prog  = '/usr/bin/python2'
-let g:python3_host_prog  = '/usr/bin/python3'
-
 
 " turn on rainbow_parentheses globally:
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
-" airline configuration:
+" arline configuration:
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline_theme='luna'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_theme='sol'
 
-let mapleader = ","
 map <leader>rc :tabnew ~/.vimrc
 map <leader>rs :source ~/.vimrc
 map <leader>tn :tabnew
 
-" Enable dictionary auto-completion in Markdown files and Git Commit Messages
-" autocmd FileType markdown setlocal complete+=kspell
-" autocmd FileType gitcommit setlocal complete+=kspell
-" autocmd BufRead,BufNewFile *.md setlocal spell
-
-augroup markdownSpell
-    autocmd!
-    autocmd FileType markdown setlocal spell
-    autocmd FileType gitcommit setlocal complete+=kspell
-    autocmd BufRead,BufNewFile *.md setlocal spell
-    autocmd BufRead,BufNewFile *.txt setlocal spell
-augroup END
-
-
-iabbrev ,,, ```
 
 " coc configuration
 " Use tab for trigger completion with characters ahead and navigate.
