@@ -8,8 +8,8 @@ d=$d-$t
 echo $d
 cd ~/dev/config
 set +e  # Grep succeeds with nonzero exit codes to show results.
-echo $?
 git status | grep 'modified\|Untracked'
+echo $?
 if [ $? -eq 0 ]
 then
     set -e
