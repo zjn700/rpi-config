@@ -1,6 +1,9 @@
 
-### Sun 21 Feb 2021 09:00:59 PM EST
-- added bin directory at $HOME and moved shell script there
+### Mon 22 Feb 2021 03:17:18 PM +08
+- added bin directory to the $HOME directory and moved my one shell script there. Dropped the .sh extension. Updated .bashrc to include the bin directory. It's configured in the .profile file, but apparently that file is not being read. :/
+- changed time zone from EST to Singapore
+- changed batteries on my cheap bluetooth keyboard
+- bluetooth wasn't in the Vim spell check list, so I added it (zg)]
 
 ### Sun 21 Feb 2021 04:56:36 AM EST
 - cleaned the fridge today, but not the freezer.
