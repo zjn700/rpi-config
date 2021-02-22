@@ -1,4 +1,7 @@
 
+### Sun 21 Feb 2021 09:00:59 PM EST
+- added bin directory at $HOME and moved shell script there
+
 ### Sun 21 Feb 2021 04:56:36 AM EST
 - cleaned the fridge today, but not the freezer.
 - kinda tired at this moment. May be a consequence of the lower carb diet.
