@@ -1,0 +1,89 @@
+## another way to access wlan0 data
+:sudo iwlist wlan0 scan
+
+===
+
+## command to get just the ssid at wlan0
+iwconfig wlan0 | grep ESSID |  awk '{print $(NF)}' | sed 's/[A-Z":]//g'
+
+### see progression below: first step show the status of wlan0 and the current SSID
+iwconfig wlan0
+wlan0     IEEE 802.11  ESSID:"gobucks5"  
+          Mode:Managed  Frequency:5.26 GHz  Access Point: 00:67:62:03:D1:DC   
+          Bit Rate=433.3 Mb/s   Tx-Power=31 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=69/70  Signal level=-41 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:150  Invalid misc:0   Missed beacon:0
+
+
+iwconfig wlan0 | grep ESSID
+wlan0     IEEE 802.11  ESSID:"gobucks5"  
+
+### remove everything except the line wlan0 appears in
+:iwconfig wlan0 | grep ESSID |  awk '{print $(NF)}'
+ESSID:"gobucks5"
+
+### remove the caps, colon, and quotes"
+:iwconfig wlan0 | grep ESSID |  awk '{print $(NF)}' | sed 's/[A-Z":]//g'
+gobucks5
+
+
+
+ip r | grep default
+
+when connected to the pixel
+192.168.221.212
+
+when connected to the iphone:
+default via 172.20.10.1 dev wlan0 proto dhcp src 172.20.10.4 metric 303 
+
+
+when connected to the router:
+default via 192.168.1.1 dev wlan0 proto dhcp src 192.168.1.17 metric 303 
+
+
+cat /etc/resolv.conf
+
+nameserver 127.0.0.1
+
+nvim /etc/dhcpcd.conf
+
+interface wlan0
+static ip_address=192.168.1.20/24
+static routers=192.168.221.212
+static domain_name_servers=8.8.8.8
+
+=====
+
+
+pi@raspberrypi:~ $
+iwconfig wlan0
+wlan0     IEEE 802.11  ESSID:"ap0ll08"  
+          Mode:Managed  Frequency:2.462 GHz  Access Point: 3E:5D:88:D8:E2:65   
+          Bit Rate=24 Mb/s   Tx-Power=31 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=58/70  Signal level=-52 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:96  Invalid misc:0   Missed beacon:0
+
+pi@raspberrypi:~ $
+:iwconfig wlan0
+wlan0     IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=31 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          
+pi@raspberrypi:~ $
+:iwconfig wlan0
+wlan0     IEEE 802.11  ESSID:"gobucks5"  
+          Mode:Managed  Frequency:5.26 GHz  Access Point: 00:67:62:03:D1:DC   
+          Bit Rate=433.3 Mb/s   Tx-Power=31 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=70/70  Signal level=-39 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
