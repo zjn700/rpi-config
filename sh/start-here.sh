@@ -3,7 +3,7 @@
 # set -e will cause the script to exit on any error/non-zero return value.
 # set +e is the default. if there are errors the script will continue to run
 
-echo "starting..."
+echo "start a new shell script with this file..."
 d=`date +%Y-%m-%d`
 t=`date +%R`
 t="${t//:}"

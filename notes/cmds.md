@@ -1,0 +1,2 @@
+gencmd measure_temp
+

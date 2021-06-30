@@ -3,8 +3,15 @@
 
 ===
 
+## get the current router ip
+ip r | grep default | awk '{print $(3)}'
+192.168.1.1
+
+===
+
 ## command to get just the ssid at wlan0
 iwconfig wlan0 | grep ESSID |  awk '{print $(NF)}' | sed 's/[A-Z":]//g'
+gobucks5
 
 ### see progression below: first step show the status of wlan0 and the current SSID
 iwconfig wlan0
@@ -56,7 +63,10 @@ static routers=192.168.221.212
 static domain_name_servers=8.8.8.8
 
 =====
+Failed to save wpa_supplicant configuration.
 
+You should add update_config=1 to /etc/wpa_supplicant.conf.
+=====
 
 pi@raspberrypi:~ $
 iwconfig wlan0
