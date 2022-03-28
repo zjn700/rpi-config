@@ -97,3 +97,10 @@ wlan0     IEEE 802.11  ESSID:"gobucks5"
           Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
           Tx excessive retries:0  Invalid misc:0   Missed beacon:0
 
+## insert in /etc/dhcpcd.conf
+
+static ip_address=192.168.1.20/24
+static routers=192.168.1.1
+#static domain_name_servers=127.0.0.1
+static domain_name_servers=8.8.8.8 8.8.4.4 192.168.1.1
+

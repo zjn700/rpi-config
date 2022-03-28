@@ -1,4 +1,21 @@
 
+## Mon 05 Jul 2021 12:25:42 PM +08
+
+OK, so this terminal isn't quite as nice as the other app, well not quite as
+large, but it is fully functional. You can see the cursor for one, and all the
+UX is visible as well.
+
+There are some display issues with double-text.
+  
+However, Blink is better than both the raspberry-specific apps. And it lets you zoom in on the text -- a big plus on small screens.
+
+
+
+## Wed 30 Jun 2021 04:09:52 PM +08
+Testing an app on the Kindle that connect to the pi. 
+There is no suggeated text on this keyboard. :/
+
+
 ### Mon 22 Feb 2021 03:17:18 PM +08
 - added bin directory to the $HOME directory and moved my one shell script there. Dropped the .sh extension. Updated .bashrc to include the bin directory. It's configured in the .profile file, but apparently that file is not being read. :/
 - changed time zone from EST to Singapore
